@@ -9,30 +9,20 @@ function parseURLHash () {
     return urlHash;
 }
 
-
 //script
 var spotifyApi = new SpotifyWebApi(); //instantiate Spotify Web API library helper -- has built-in functions that can let us make calls to the API.
+//see 'https://doxdox.org/jmperez/spotify-web-api-js' for documentation about this library -- simpler than running multiple .get calls ourselves
 
-//set up variables
-const client_id = "b8f474e0b2954346b6fad21c7e74a39c";
-const client_secret = "56d630593c7a4c568b193de32e68d32b";
-const redirect_uri = "https://tabify.netlify.com/callback"; //this can be changed, but Spotify Dashboard needs to be updated with whatever new page we use
 
+//on callback, get access token from URL
 urlHash = parseURLHash(); //get the access token from the URL parameters
-console.log(urlHash);
 var token = urlHash.access_token; // save to variable
-console.log(token); //DEBUG: Testing
 spotifyApi.setAccessToken(token); //set the access token in the API helper
 
-
 //DOM manipulation
-
 document.getElementById("app").innerHTML = "<p>Hello</p>"; 
 
-//Test access token
-console.log(spotifyApi.getAccessToken());
-
-//DEBUG: Get your own data
+//Get the user's own data, returns an object
 spotifyApi.getMe() 
   .then(function(data) {
     console.log(data);
