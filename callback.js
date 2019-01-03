@@ -26,9 +26,8 @@ spotifyApi.setAccessToken(token); //set the access token in the API helper
 
 
 //DOM manipulation
-var app = $("app");
-console.log(app);
-app.append("<p>Hello</p>"); 
+
+document.getElementById("app").innerHTML = "<p>Hello</p>"; 
 
 //Test access token
 console.log(spotifyApi.getAccessToken());
@@ -37,7 +36,7 @@ console.log(spotifyApi.getAccessToken());
 spotifyApi.getMe() 
   .then(function(data) {
     console.log(data);
-    app.append("<br><p>User: <strong>" + data.id +"</strong></p>"); 
+    document.getElementById("app").innerHTML += "<br><p>User: <strong>" + data.id +"</strong></p>"; 
   }, function(err) {
     console.error(err);
   });
