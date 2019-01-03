@@ -24,10 +24,13 @@ var token = urlHash.access_token; // save to variable
 console.log(token); //DEBUG: Testing
 spotifyApi.setAccessToken(token); //set the access token in the API helper
 
-//DEBUG: Get your own playlist data
-spotifyApi.getUserPlaylists()  // note that we don't pass a user id
+//Test access token
+console.log(spotifyApi.getAccessToken());
+
+//DEBUG: Get your own data
+spotifyApi.getMe() 
   .then(function(data) {
-    console.log('User playlists', data);
+    console.log(data);
   }, function(err) {
     console.error(err);
   });
