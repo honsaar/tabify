@@ -1,4 +1,4 @@
-console.log("AAAAA");
+console.log("Callback!");
 
 var spotifyApi = new SpotifyWebApi();
 
@@ -9,5 +9,13 @@ const redirect_uri = "https://tabify.netlify.com/callback";
 
 console.log(spotifyApi);
 
-var token = window.location.hash.substr(1);
+function parseURLHash () {
+    var search = location.hash.substring(1);
+    var urlHash = search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
+                     function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
+    return urlHash;
+}
+urlHash = parseURLHash();
+var token = urlHash.access_token;
+
 console.log(token);
