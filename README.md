@@ -1,21 +1,13 @@
-# Testing Authentication
+# Tabify
+> Spotify + Tabs
 
-A quick test set up for getting an authentication for a user -- taken straight from the Web API documentation, which uses a small collection of libraries (express, node, etc.) -- need to work out how best to host this later on.
-
-These use the Authorisation Code Method.
+Todo: Make a better app name
 
 ## Installation
+Clone the repo and open in your code editor. No fancy NPM installs required; all the code is frontend-only.
 
+### How do I test it then?
 
-Make sure you have [Node](https://nodejs.org/en/) installed. Once installed, clone the repository and install its dependencies running:
+Make your changes, then push it to the `Master` branch of this repo. Then go to [tabify.netlify.com](https://tabify.netlify.com) to test it. We require a hosted instance of this for the callbacks to work. **Netlify** is a static hosting service that automatically deploys each time we make a push to this git repo.
 
-    $ npm install
-
-
-## Running the examples
-In order to run this, open up a terminal (or cmd line, or whatever), navigate to this repository on your local system, then type the below to start running a node server that allows for this app to run.
-
-
-    $ node app.js
-
-Then, open `http://localhost:8888` in a browser.
+For now it's just deploying using the `Master` branch, but we can update that later as we create dev branches if required. (*Note: We will need to update the Spotify App Dashboard to also accept these additional callback URIs*)
