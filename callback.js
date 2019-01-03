@@ -24,6 +24,11 @@ var token = urlHash.access_token; // save to variable
 console.log(token); //DEBUG: Testing
 spotifyApi.setAccessToken(token); //set the access token in the API helper
 
+
+//DOM manipulation
+var app = $("app");
+app.innerHTML = "<p>Hello</p>"; 
+
 //Test access token
 console.log(spotifyApi.getAccessToken());
 
@@ -31,6 +36,7 @@ console.log(spotifyApi.getAccessToken());
 spotifyApi.getMe() 
   .then(function(data) {
     console.log(data);
+    app.innerHTML += "<br><p>User: <strong>" + data.id +"</strong></p>"; 
   }, function(err) {
     console.error(err);
   });
