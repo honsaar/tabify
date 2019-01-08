@@ -23,21 +23,26 @@ spotifyApi.setAccessToken(token); //set the access token in the API helper
 document.getElementById("app").innerHTML = "<p>Hello</p>"; 
 
 //Get the user's own data, returns an object
-spotifyApi.getMyCurrentPlayingTrack()
-    .then(function (data) {
-        console.log(data);
-        document.getElementById("app").innerHTML += "<br><p>Trackname: <strong>" + data.item.name + "</strong></p>";
-        document.getElementById("app").innerHTML += "<br><p>Artist: <strong>" + data.item.artists[0].name + "</strong></p>";
+document.getElementbyId('myButtId').addEventListener('click', function (e) {
 
-        var _searchString = data.item.name;
-        for (var i = 0; i < data.item.artists.length; i++) {
+    //do things
+    spotifyApi.getMyCurrentPlayingTrack()
+        .then(function (data) {
+            console.log(data);
+            document.getElementById("SongInfo").innerHTML += "<br><p>Trackname: <strong>" + data.item.name + "</strong></p>";
+            document.getElementById("SongInfo").innerHTML += "<br><p>Artist: <strong>" + data.item.artists[0].name + "</strong></p>";
 
-            _searchString += ", " + data.item.artists[i].name;
-        }
-        document.getElementById("app").innerHTML += "<p>" + _searchString + "</p>";
+            var _searchString = data.item.name;
+            for (var i = 0; i < data.item.artists.length; i++) {
 
-    }, function (err) {
-        console.error(err);
+                _searchString += ", " + data.item.artists[i].name;
+            }
+            document.getElementById("SongInfo").innerHTML += "<p>" + _searchString + "</p>";
+
+        }, function (err) {
+            console.error(err);
+        });
+
 });
 spotifyApi.getMe() 
   .then(function(data) {
