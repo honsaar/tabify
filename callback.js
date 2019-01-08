@@ -29,8 +29,8 @@ window.onload = function () {
         .then(function (data) {
             console.log(data);
             document.getElementById("SongInfo").innerHTML = "";
-            document.getElementById("SongInfo").innerHTML += "<br><p>Trackname: <strong>" + data.item.name + "</strong></p>";
-            document.getElementById("SongInfo").innerHTML += "<br><p>Artist: <strong>" + data.item.artists[0].name + "</strong></p>";
+            document.getElementById("SongInfo").innerHTML += "<p>Trackname: <strong>" + data.item.name + "</strong></p>";
+            document.getElementById("SongInfo").innerHTML += "<p>Artist: <strong>" + data.item.artists[0].name + "</strong></p>";
 
             var _searchString = data.item.name;
             for (var i = 0; i < data.item.artists.length; i++) {
