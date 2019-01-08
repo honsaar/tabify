@@ -25,8 +25,17 @@ document.getElementById("app").innerHTML = "<p>Hello</p>";
 //Get the user's own data, returns an object
 spotifyApi.getMyCurrentPlayingTrack()
     .then(function (data) {
-    console.log(data);
-    //document.getElementById("app").innerHTML += "<br><p>User: <strong>" + data.id + "</strong></p>";
+        console.log(data);
+        document.getElementById("app").innerHTML += "<br><p>Trackname: <strong>" + data.item.name + "</strong></p>";
+        document.getElementById("app").innerHTML += "<br><p>Artist: <strong>" + data.item.artists[0].name + "</strong></p>";
+
+        var _searchString = data.item.name;
+        for (var i = 0; i < data.item.artists.length; i++) {
+
+            _searchString += ", " + data.item.artists[i].name;
+        }
+        _searchString += ", "
+        document.getElementById("app").innerHTML += "<p>" + _searchString + "</p>";
 
     }, function (err) {
         console.error(err);
