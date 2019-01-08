@@ -23,7 +23,7 @@ spotifyApi.setAccessToken(token); //set the access token in the API helper
 document.getElementById("app").innerHTML = "<p>Hello</p>"; 
 
 //Get the user's own data, returns an object
-document.getElementbyId('myButtId').addEventListener('click', getSong);
+document.getElementById('myButtId').addEventListener('click', getSong);
 
 function getSong() {
     spotifyApi.getMyCurrentPlayingTrack()
