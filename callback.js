@@ -23,9 +23,8 @@ spotifyApi.setAccessToken(token); //set the access token in the API helper
 document.getElementById("app").innerHTML = "<p>Hello</p>"; 
 
 //Get the user's own data, returns an object
-document.getElementById('myButtId').addEventListener('click', getSong);
-
-function getSong() {
+window.onload = function () {
+document.getElementById('myButtId').addEventListener('click',function(getSong) {
     spotifyApi.getMyCurrentPlayingTrack()
         .then(function (data) {
             console.log(data);
@@ -43,7 +42,7 @@ function getSong() {
             console.error(err);
         });
 
-}
+});
 
 
     //do things
@@ -56,3 +55,4 @@ spotifyApi.getMe()
   }, function(err) {
     console.error(err);
   });
+}
