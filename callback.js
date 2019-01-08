@@ -34,7 +34,6 @@ spotifyApi.getMyCurrentPlayingTrack()
 
             _searchString += ", " + data.item.artists[i].name;
         }
-        _searchString += ", "
         document.getElementById("app").innerHTML += "<p>" + _searchString + "</p>";
 
     }, function (err) {
