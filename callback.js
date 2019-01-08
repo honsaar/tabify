@@ -24,10 +24,11 @@ document.getElementById("app").innerHTML = "<p>Hello</p>";
 
 //Get the user's own data, returns an object
 window.onload = function () {
-document.getElementById('myButtId').addEventListener('click',function(getSong) {
+    document.getElementById('myButtId').addEventListener('click', function (getSong) {
     spotifyApi.getMyCurrentPlayingTrack()
         .then(function (data) {
             console.log(data);
+            document.getElementById("SongInfo").innerHTML = "";
             document.getElementById("SongInfo").innerHTML += "<br><p>Trackname: <strong>" + data.item.name + "</strong></p>";
             document.getElementById("SongInfo").innerHTML += "<br><p>Artist: <strong>" + data.item.artists[0].name + "</strong></p>";
 
