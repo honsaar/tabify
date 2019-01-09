@@ -1,14 +1,25 @@
 <html>
-    <!-- TODO: make this less shit -- this is where the main app will reside -->
-    <head>
-        <title>Tabify</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="spotify-web-api.js"></script>
-        <script src="callback.js"></script>
-		<button id='myButtId'>Get current track</button>
-		<div id='SongInfo'></div>
-    </body>
+
+<head>
+    <title>Tabify</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <h1>Tabify</h1>
+    <h3>Tabs + Spotify</h3>
+    <div id="app">
+        <button class="butts" id="myButtId">Get current track</button>
+
+        <div id="SongInfo" class="info"></div>
+
+    </div>
+    <!-- scripts -- best practice is to put these at the end of <body> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="spotify-web-api.js"></script>
+    <script src="callback.js"></script>
+
+</body>
+
 </html>
