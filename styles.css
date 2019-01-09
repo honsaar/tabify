@@ -24,3 +24,9 @@ body {
 	position:relative;
 	top:1px;
 }
+
+.container {
+    padding-left: 20%;
+    padding-right: 20%;
+    /* lazy-ass padding for container -- FIXME: git gud */
+}
