@@ -54,7 +54,7 @@ window.onload = function () {
 spotifyApi.getMe() 
   .then(function(data) {
     console.log(data);
-    document.getElementById("user").innerHTML = "User: <strong>" + data.id +"</strong>"; 
+    document.getElementById("user").innerHTML = "<strong>" + data.id +"</strong>"; 
   }, function(err) {
     console.error(err);
   });
