@@ -14,3 +14,6 @@ For now it's just deploying using the `Master` branch, but we can update that la
 
 ## Future Ideas
 - *Not everyone uses Spotify, what APIs exist for SoundCloud and Apple Music?*
+https://developers.soundcloud.com/docs/api/guide
+https://developer.apple.com/documentation/applemusicapi
+THEY EXIST 
