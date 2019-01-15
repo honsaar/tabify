@@ -1,6 +1,6 @@
 //Callback.js
-const scrap = require("GuitarTabsParser-master/node/scraper")
-const ugs = require('ultimate-guitar-scraper/index') //i think this is where i put this?
+//const scrap = require("GuitarTabsParser-master/node/scraper")
+const ugs = require('ultimate-guitar-scraper') //i think this is where i put this?
 //methods
 //TODO: add in error handling -- what if a user cancels? They will reach the callback page regardless
 function parseURLHash () {
