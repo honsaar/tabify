@@ -1,0 +1,40 @@
+{
+  "name": "ultimate-guitar-scraper",
+  "version": "1.1.1",
+  "engines": {
+    "node": ">=6.5"
+  },
+  "description": "A scraper for http://www.ultimate-guitar.com",
+  "keywords": [
+    "ultimate",
+    "guitar",
+    "scraper",
+    "TAB",
+    "tablature",
+    "music",
+    "sheet",
+    "song",
+    "artist",
+    "autocomplete"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "standard && jasmine"
+  },
+  "author": "Simon Thiboutôt <salut@simonthiboutot.com> (http://simonthiboutot.com)",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "json5": "^0.5.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "ajv": "^5.2.3",
+    "jasmine": "^2.99.0",
+    "standard": "^10.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masterT/ultimate-guitar-scraper"
+  }
+}

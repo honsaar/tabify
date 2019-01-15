@@ -11,6 +11,8 @@ function parseURLHash () {
 
 //script
 var spotifyApi = new SpotifyWebApi(); //instantiate Spotify Web API library helper -- has built-in functions that can let us make calls to the API.
+
+const ugs = require('ultimate-guitar-scraper') //i think this is where i put this?
 //see 'https://doxdox.org/jmperez/spotify-web-api-js' for documentation about this library -- simpler than running multiple .get calls ourselves
 
 
@@ -21,7 +23,7 @@ spotifyApi.setAccessToken(token); //set the access token in the API helper
 
 //Get the user's own data, returns an object
 window.onload = function () {
-    document.getElementById('myButtId').addEventListener('click', function (getSong) { //Question: What dis? Where is the getSong parameter coming from? We need use strict up in this shit
+    document.getElementById('myButtId').addEventListener('click', function () { //Question: What dis? Where is the getSong parameter coming from? We need use strict up in this shit
     spotifyApi.getMyCurrentPlayingTrack()
         .then(function (data) {
             console.log(data);
@@ -40,6 +42,7 @@ window.onload = function () {
                 _searchString += ", " + data.item.artists[i].name;
             }
             document.getElementById("SongInfo").innerHTML += "<p>Search string for API: <strong>" + _searchString + "</strong></p>";
+            document.getElementById("SongInfo").innerHTML += "<button class='butts' id='buttsdlID'>Get Tab!</button>";
 
         }, function (err) {
             console.error(err);
@@ -59,3 +62,4 @@ spotifyApi.getMe()
     console.error(err);
   });
 }
+
