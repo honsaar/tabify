@@ -12,7 +12,7 @@ function parseURLHash () {
 //script
 var spotifyApi = new SpotifyWebApi(); //instantiate Spotify Web API library helper -- has built-in functions that can let us make calls to the API.
 
-const ugs = require('ultimate-guitar-scraper') //i think this is where i put this?
+//const ugs = require('ultimate-guitar-scraper') //i think this is where i put this?
 //see 'https://doxdox.org/jmperez/spotify-web-api-js' for documentation about this library -- simpler than running multiple .get calls ourselves
 
 
