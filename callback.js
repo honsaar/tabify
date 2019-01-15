@@ -1,6 +1,6 @@
 //Callback.js
 const scrap = require("GuitarTabsParser-master/node/scraper")
-const ugs = require('ultimate-guitar-scraper/lib/index') //i think this is where i put this?
+const ugs = require('ultimate-guitar-scraper') //i think this is where i put this?
 //methods
 //TODO: add in error handling -- what if a user cancels? They will reach the callback page regardless
 function parseURLHash () {
@@ -15,7 +15,9 @@ var spotifyApi = new SpotifyWebApi(); //instantiate Spotify Web API library help
 
 //see 'https://doxdox.org/jmperez/spotify-web-api-js' for documentation about this library -- simpler than running multiple .get calls ourselves
 
-
+//string for searching
+var _searchString;
+var tabTypes = ['Guitar Pro','Tab',  'Chords'];
 //on callback, get access token from URL
 urlHash = parseURLHash(); //get the access token from the URL parameters
 var token = urlHash.access_token; // save to variable
@@ -31,7 +33,7 @@ window.onload = function () {
             document.getElementById("SongInfo").innerHTML += "<p>Track name: <strong>" + data.item.name + "</strong></p>";
             document.getElementById("SongInfo").innerHTML += "<p>Artist: <strong>" + data.item.artists[0].name + "</strong></p>";
 
-            var _searchString = data.item.name;
+            _searchString = data.item.name;
             // adjust this for different services if required? 
             //Do we need it as a comma-separated value or should we make it into an object where we can build our queries out ourselves using var song as an object - e.g.: song.name; song.artist[0], song.artist[1], and so on instead of a string we perform transforms on?
 
@@ -50,6 +52,21 @@ window.onload = function () {
 
 });
 
+    document.getElementById('buttsdlID').addEventListener('click', function () {
+        ugs.search({
+            query: _searchString,
+            page: 1,
+            type: types
+        }, (error, tabs) => {
+            if (error) {
+                console.log(error);
+            } else {
+                document.getElementById("SongInfo").innerHTML += "<p>" + tabs.url + "</p>";
+
+            }
+        });
+
+    });
 
     //do things
 
