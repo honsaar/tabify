@@ -23,7 +23,7 @@ spotifyApi.setAccessToken(token); //set the access token in the API helper
 
 //Get the user's own data, returns an object
 window.onload = function () {
-    document.getElementById('myButtId').addEventListener('click', function () { //Question: What dis? Where is the getSong parameter coming from? We need use strict up in this shit
+    document.getElementById('myButtId').addEventListener('click', function (param) { //Question: What dis? Where is the getSong parameter coming from? We need use strict up in this shit
     spotifyApi.getMyCurrentPlayingTrack()
         .then(function (data) {
             console.log(data);
