@@ -1,6 +1,8 @@
 //Callback.js
-//const scrap = require("GuitarTabsParser-master/node/scraper")
-const ugs = require('ultimate-guitar-scraper') //i think this is where i put this?
+
+const ugs = require('ultimate-guitar-scraper')
+
+
 //methods
 //TODO: add in error handling -- what if a user cancels? They will reach the callback page regardless
 function parseURLHash () {
@@ -25,9 +27,11 @@ spotifyApi.setAccessToken(token); //set the access token in the API helper
 
 //Get the user's own data, returns an object
 window.onload = function () {
+    console.log("AAA");
     document.getElementById('myButtId').addEventListener('click', function () { 
     spotifyApi.getMyCurrentPlayingTrack()
         .then(function (data) {
+            console.log("BBB");
             console.log(data);
             document.getElementById("SongInfo").innerHTML = "";
             document.getElementById("SongInfo").innerHTML += "<p>Track name: <strong>" + data.item.name + "</strong></p>";
@@ -53,6 +57,7 @@ window.onload = function () {
 });
 
     document.getElementById('buttsdlID').addEventListener('click', function () {
+        console.log("clicked Tab butt")
         ugs.search({
             query: _searchString,
             page: 1,
