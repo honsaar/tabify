@@ -13,20 +13,38 @@ function parseURLHash () {
 }
 
 //script
-var spotifyApi = new SpotifyWebApi(); //instantiate Spotify Web API library helper -- has built-in functions that can let us make calls to the API.
-
+var Spotify = require('spotify-web-api-js');
+var spotifyApi = new Spotify();
 //see 'https://doxdox.org/jmperez/spotify-web-api-js' for documentation about this library -- simpler than running multiple .get calls ourselves
 
 //string for searching
 var _searchString;
 var tabTypes = ['Guitar Pro','Tab',  'Chords'];
 //on callback, get access token from URL
+
+//TODO: get the tokens in another way
+
 urlHash = parseURLHash(); //get the access token from the URL parameters
 var token = urlHash.access_token; // save to variable
 spotifyApi.setAccessToken(token); //set the access token in the API helper
 
 //Get the user's own data, returns an object
 window.onload = function () {
+    console.log(token);
+    console.log(spotifyApi);
+    console.log(urlHash)
+
+
+
+    spotifyApi.getMe() 
+  .then(function(data) {
+    console.log(data);
+    document.getElementById("user").innerHTML = "<strong>" + data.id +"</strong>"; 
+  }, function(err) {
+    console.error(err);
+  });
+
+
     console.log("AAA");
     document.getElementById('myButtId').addEventListener('click', function () { 
     spotifyApi.getMyCurrentPlayingTrack()
@@ -56,32 +74,26 @@ window.onload = function () {
 
 });
 
-    document.getElementById('buttsdlID').addEventListener('click', function () {
-        console.log("clicked Tab butt")
-        ugs.search({
-            query: _searchString,
-            page: 1,
-            type: types
-        }, (error, tabs) => {
-            if (error) {
-                console.log(error);
-            } else {
-                document.getElementById("SongInfo").innerHTML += "<p>" + tabs.url + "</p>";
+    // document.getElementById('buttsdlID').addEventListener('click', function () {
+    //     console.log("clicked Tab butt")
+    //     ugs.search({
+    //         query: _searchString,
+    //         page: 1,
+    //         type: types
+    //     }, (error, tabs) => {
+    //         if (error) {
+    //             console.log(error);
+    //         } else {
+    //             document.getElementById("SongInfo").innerHTML += "<p>" + tabs.url + "</p>";
 
-            }
-        });
+    //         }
+    //     });
 
-    });
+    // });
 
     //do things
 
 
-spotifyApi.getMe() 
-  .then(function(data) {
-    console.log(data);
-    document.getElementById("user").innerHTML = "<strong>" + data.id +"</strong>"; 
-  }, function(err) {
-    console.error(err);
-  });
+
 }
 

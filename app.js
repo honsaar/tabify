@@ -10,6 +10,6 @@
 window.onload = function () {
     document.getElementById('loginButt').addEventListener('click', function (e) {
             document.getElementById('loginButt').innerText = "Redirecting to Spotify Authentication...";
-            window.location = "https://accounts.spotify.com/authorize?client_id=b8f474e0b2954346b6fad21c7e74a39c&redirect_uri=https:%2F%2Ftabify.netlify.com%2tabifynew%2Fcallback&scope=user-read-private%20user-read-currently-playing%20user-read-playback-state%20user-read-email&response_type=token&state=123";
+            window.location = "https://accounts.spotify.com/authorize?client_id=b8f474e0b2954346b6fad21c7e74a39c&redirect_uri=https:%2F%2Ftabify.netlify.com%2Ftabifynew%2Fcallback&scope=user-read-private%20user-read-currently-playing%20user-read-playback-state%20user-read-email&response_type=token&state=123";
         });
     };

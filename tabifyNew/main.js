@@ -1,11 +1,20 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow} = require('electron');
+var express =  require('express');
+var ex = express();
+ex.use(express.static(__dirname));
+    ex.get('/',function(request,response){
+       response.sendFile(__dirname+'/index.html');
+    });
+
+    ex.listen('8888');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
+
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
@@ -16,11 +25,17 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadURL('http://localhost:8888/')
   mainWindow.openDevTools();
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+
+  mainWindow.webContents.on('will-navigate', function (event, newUrl) {
+    console.log(newUrl);
+    // More complex code to handle tokens goes here
+});
+
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
