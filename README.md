@@ -21,7 +21,8 @@ The app will auto-launch and run a local server on `http://localhost:8888` -- th
 
 Focus is on the desktop Electron version on the `master` branch, but there may be some development soon on the `web` branch in the future.
 
-
 ## Future Ideas
 *Not everyone uses Spotify, what APIs exist for SoundCloud and Apple Music?*
-> YES https://developers.soundcloud.com/docs/api/guide, https://developer.apple.com/documentation/applemusicapi THEY EXIST 
+> YES 
+https://developers.soundcloud.com/docs/api/guide,
+https://developer.apple.com/documentation/applemusicapi THEY EXIST 
