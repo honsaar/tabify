@@ -17,12 +17,12 @@ The Electron implementation sits in the `tabifyNew` directory and reads all of t
 Clone the repo and install any dependencies
 ```bash
 git clone https://github.com/honsaar/tabify.git
- cd tabify
- npm i
+cd tabify
+npm i
  ```
 Start the Electron app
 ```bash
- npm start 
+npm start 
  ```
 The app will auto-launch and run a local server on `http://localhost:8888` -- this is so a local server is ready for a callback redirect to `http://localhost:8888/callback.html` after performing a request of the Spotify Web API.
 
