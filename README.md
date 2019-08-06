@@ -4,8 +4,7 @@
 ## Testing
 
 Implemented some basic automated code review using Codacy and CodeClimate.
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0977b7b0c69c480494def5c900cfacdd)](https://www.codacy.com/app/honsaar/Tabify?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=honsaar/Tabify&amp;utm_campaign=Badge_Grade)[![Maintainability](https://api.codeclimate.com/v1/badges/1d510ec22e1b82c8d825/maintainability)](https://codeclimate.com/github/honsaar/Tabify/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1d510ec22e1b82c8d825/maintainability)](https://codeclimate.com/github/honsaar/Tabify/maintainability)
 
 
 ## Installation
